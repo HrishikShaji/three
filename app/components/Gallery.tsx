@@ -1,11 +1,8 @@
 "use client"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
-import { Flip } from "gsap/all"
 import { useRef, useState } from "react"
 
-// Register the plugin
-gsap.registerPlugin(Flip)
 
 export default function Gallery() {
 	const card1 = useRef<HTMLDivElement>(null)
@@ -17,6 +14,18 @@ export default function Gallery() {
 	useGSAP(() => {
 
 		const timeline = gsap.timeline()
+
+		{/* FIRST ANIMATION*/ }
+
+		gsap.set(topContainer.current, {
+			scaleY: "150%",
+			transformOrigin: "top"
+		})
+
+		gsap.set(bottomContainer.current, {
+			scaleY: "0%",
+			transformOrigin: 'bottom'
+		})
 
 		timeline.fromTo(card1.current, {
 			scaleX: "150%",
@@ -33,30 +42,18 @@ export default function Gallery() {
 		}, {
 			scaleX: "100%",
 			transformOrigin: "right"
-		}, 0)
-
-
-		gsap.fromTo(topContainer.current, {
-			scaleY: "150%",
-		}, {
-			scaleY: "100%",
-			transformOrigin: "top"
-		})
-
-		gsap.fromTo(bottomContainer.current, {
-			scaleY: "0%"
-		}, {
-			scaleY: "100%",
-			transformOrigin: 'bottom'
-		})
-
+		}, 0).to(topContainer.current, {
+			scaleY: "100%"
+		}, 1).to(bottomContainer.current, {
+			scaleY: '100%',
+		}, 1)
 
 	}, {})
 
 	return (
 		<div className="w-full h-full p-10 bg-gray-100 min-h-screen">
-			<div className="w-full h-full flex flex-col gap-5">
-				<div ref={topContainer} className="flex-2/3 flex gap-5 w-full h-full">
+			<div className="w-full flex flex-col gap-5 h-full ">
+				<div ref={topContainer} className="flex flex-2/3 gap-5 w-full">
 					<div ref={card1} className="h-full flex-2/3 w-full bg-green-500"></div>
 					<div className="flex flex-1/3 flex-col gap-5 h-full w-full">
 						<div ref={card2} className="h-[50%] w-full bg-red-500"></div>
