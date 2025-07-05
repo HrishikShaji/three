@@ -1,9 +1,13 @@
+"use client"
+
 import Image from "next/image";
+import ReactLenis from "@studio-freight/react-lenis";
+import Hero from "./components/Hero";
 
 export default function Home() {
   return (
-    <div className="home">
-      <h1>PROJECT</h1>
-    </div>
+    <ReactLenis root>
+      <Hero />
+    </ReactLenis>
   );
 }
