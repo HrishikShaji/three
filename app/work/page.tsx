@@ -1,10 +1,11 @@
 import Gallery from "../components/Gallery";
+import Overview from "../components/Overview";
 
 export default function Page() {
   return (
-    <div className="h-screen ">
+    <div className="">
       <Gallery />
-
+      <Overview />
     </div>
   )
 }
