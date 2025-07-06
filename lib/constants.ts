@@ -17,3 +17,12 @@ export const googleImages = [
   "https://images.pexels.com/photos/18069238/pexels-photo-18069238.png",
   "https://images.pexels.com/photos/17486099/pexels-photo-17486099.png"
 ]
+
+export const projects = [
+  { title: "one", img: "https://images.pexels.com/photos/25626509/pexels-photo-25626509.jpeg" },
+  { title: "two", img: "https://images.pexels.com/photos/25630342/pexels-photo-25630342.jpeg" },
+  { title: "three", img: "https://images.pexels.com/photos/25626516/pexels-photo-25626516.jpeg" },
+  { title: "four", img: "https://images.pexels.com/photos/18069424/pexels-photo-18069424.png" },
+  { title: "five", img: "https://images.pexels.com/photos/18069238/pexels-photo-18069238.png" },
+  { title: "six", img: "https://images.pexels.com/photos/17486099/pexels-photo-17486099.png" },
+]
